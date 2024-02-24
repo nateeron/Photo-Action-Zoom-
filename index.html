@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+ 
+</style>
+
+<link rel="stylesheet" href="H:\Developer\Html\Photo\style.css">
+</head>
+<body>
+
+<div class="image-row">
+  <div class="image-item ">
+    <img class="hover-effect"  onclick="openDialog(src)" src="H:\Developer\Html\Photo\image\image1.jpg" alt="Image 1">
+  </div>
+  <div class="image-item">
+    <img class="hover-effect"   onclick="openDialog(src)" src="H:\Developer\Html\Photo\image\image2.jpg" alt="Image 2">
+  </div>
+  <div class="image-item">
+    <img class="hover-effect"   onclick="openDialog(src)" src="H:\Developer\Html\Photo\image\image3.jpg" alt="Image 3">
+  </div>
+  <div class="image-item">
+    <img class="hover-effect"   onclick="openDialog(src)" src="H:\Developer\Html\Photo\image\image4.jpg" alt="Image 4">
+  </div>
+  <div class="image-item">
+    <img class="hover-effect"   onclick="openDialog(src)" src="H:\Developer\Html\Photo\image\image5.jpg" alt="Image 5">
+  </div>
+  <div class="image-item">
+    <img class="hover-effect"   onclick="openDialog(src)" src="H:\Developer\Html\Photo\image\image6.png" alt="Image 6">
+  </div>
+  <!-- Add more image items as needed -->
+</div>
+
+<!-- Dialog overlay -->
+<div class="dialog-overlay"  id="dialog-contentz">
+    <!-- Dialog content -->
+    <div style="width: 100%;text-align: end;">
+        <button class="close-button" onclick="closeDialog()"> X </button>
+    </div>
+    <div class="dialog-content" id="dialog-content">
+        <!-- Content inside the dialog goes here -->
+       
+        <img class="dialog-image" id="dialog-image"  src="your-image.jpg" alt="Zoomed Image">
+        <!-- Close button -->
+      
+    </div>
+    <div class="percen" id="zoom-show" >
+        <span id="zoom-sizeimage">100%</span>
+    </div>
+    <div class="sizeimage">
+        <span id="sizeimage"></span>
+    </div>
+    
+</div>
+
+
+<script src="H:\Developer\Html\Photo\java.js"></script>
+</body>
+</html>
