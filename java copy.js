@@ -44,24 +44,24 @@ function zoom(event) {
     if (event.deltaY > 0) {
         // Scroll down, zoom out
         if (scale > 2) {
-            scale = Math.max(0.0, scale - 0.1);
+            scale = Math.max(0.001, scale - 0.3);
         } else if (scale > 1) {
-            scale = Math.max(0.0, scale - 0.2);
+            scale = Math.max(0.001, scale - 0.5);
         } else {
-            scale = Math.max(0.0, scale - 0.1);
+            scale = Math.max(0.001, scale - 0.1);
         }
     } else {
         // Scroll up, zoom in
         if (scale > 2) {
             scale = Math.min(20, scale + 1);
         } else if (scale > 1) {
-            scale = Math.min(20, scale + 0.2);
+            scale = Math.min(20, scale + 0.5);
         } else {
             scale = Math.min(20, scale + 0.1);
         }
     }
-    const setscale = scale.toLocaleString(undefined, { maximumFractionDigits: 1 })
-    dialogContent.style.transform = `scale(${setscale})`;
+
+    dialogContent.style.transform = `scale(${scale})`;
 
     const img = document.getElementById("dialog-image");
     const elementToAnimate = document.getElementById("zoom-show");
@@ -78,14 +78,12 @@ function zoom(event) {
     const naturalHeight = img.naturalHeight;
     const rect = img.getBoundingClientRect(); // Assuming 'element' is the element you want to get the size from
     const percentage = (rect.width / naturalHeight) * 100;
-    const cal = ((setscale - 1) * 100) /1
-    const cal_ =  cal < 10 && cal > 0 ? 0 : cal > -10 && cal < 0  ? 0 : cal;
-    console.log(setscale,parseInt(cal_))
+    const cal = (scale - 1) * 100 / 1
     // (เงินเดือนใหม่ - เงินเดือนเก่า) x 100 ÷ เงินเดือนเก่า = เปอร์เซ็นต์เงินเดือนที่เพิ่มขึ้น
     // document.getElementById('zoom-sizeimage').innerText = percen.toString("#,###") + '%';
     const zoomSizeElement = document.getElementById("zoom-sizeimage");
     // zoomSizeElement.innerText = percentage.toLocaleString(undefined, { maximumFractionDigits: 2 }) + "%";
-     zoomSizeElement.innerText = parseInt(cal_).toString()  + "%";
+    // zoomSizeElement.innerText = cal + "%";
 }
 
 function startDrag(event) {

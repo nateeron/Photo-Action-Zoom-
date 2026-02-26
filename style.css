@@ -61,9 +61,10 @@
 
     /* Styling for the close button */
     .close-button {
-       
+        position: relative;
        font-size: 20px;
         cursor: pointer;
+        z-index: 3;
     }
 
 
